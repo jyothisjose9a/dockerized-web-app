@@ -21,3 +21,22 @@ jobs:
       - name: Build Docker image
         run: docker build -t my-docker-web-app:1.0 .
 
+      - name: Start Docker container
+        run: docker run -d -p 8080:80 --name test-container my-docker-web-app:1.0
+
+      - name: Test website response
+        run: |
+          for attempt in 1 2 3 4 5; do
+            if curl --fail --silent http://localhost:8080 | grep -q "My First Dockerized Web Application"; then
+              echo "Website test passed!"
+              exit 0
+            fi
+            sleep 2
+          done
+          echo "Website test failed!"
+          exit 1
+
+      - name: Remove test container
+        if: always()
+        run: docker rm -f test-container || true
+
