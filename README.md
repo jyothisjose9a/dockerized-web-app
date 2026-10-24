@@ -1,6 +1,10 @@
 
 # Dockerized Web Application
 
+# Dockerized Web Application
+
+[![Docker Build CI](https://github.com/jyothisjose9a/dockerized-web-app/actions/workflows/docker-build.yml/badge.svg)](https://github.com/jyothisjose9a/dockerized-web-app/actions/workflows/docker-build.yml)
+
 ## Overview
 A beginner-friendly DevOps portfolio project that demonstrates how to containerize and serve a static HTML website using Docker and Nginx.
 
