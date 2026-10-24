@@ -1,5 +1,4 @@
 
-# Dockerized Web Application
 
 # Dockerized Web Application
 
